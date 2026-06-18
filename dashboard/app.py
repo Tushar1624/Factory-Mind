@@ -797,6 +797,11 @@ if st.session_state.running:
     s_scaled = scaler.transform(s_arr)
     risk_l   = model.predict_proba(s_scaled)[0][1] * 100
 
+    wear_factor_l = w_live / 300
+    temp_factor_l = (t_live - 250) / 100
+    risk_factor_l = wear_factor_l * 0.6 + temp_factor_l * 0.4
+    remaining_l   = max(0, int(60 - risk_factor_l * 60))
+
     st.session_state.sensor_history.append(
         [t_live, v_live, rpm_live, tq_live, risk_l]
     )
@@ -809,7 +814,7 @@ if st.session_state.running:
         "Wear (min)":       w_live,
         "Failure Risk %":   round(risk_l, 2),
         "Health %":         round(100 - risk_l, 2),
-        "Remaining Days":   "",
+        "Remaining Days":   remaining_l,
     })
 
     if risk_l > 70:
