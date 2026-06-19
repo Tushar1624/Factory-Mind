@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Render](https://img.shields.io/badge/Deployed-Render-purple)
+
 # 🏭 Factory Mind
 
 An AI-powered Predictive Maintenance System that uses Machine Learning to predict potential machine failures before they occur, helping reduce downtime, improve operational efficiency, and support proactive maintenance decisions.
